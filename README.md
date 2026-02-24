@@ -11,6 +11,7 @@ Go to [Releases](https://github.com/manuel-alvarez-alvarez/elrs-usb-releases/rel
 | `elrs_usb-vX.Y.Z.bin` | Main firmware binary |
 | `bootloader-vX.Y.Z.bin` | Bootloader binary |
 | `partition-table-vX.Y.Z.bin` | Partition table binary |
+| `ota_data_initial-vX.Y.Z.bin` | OTA data partition (initial state) |
 | `flasher_args.json` | Flash addresses and arguments |
 | `*.sha256` / `*.sha512` | Checksum files for verification |
 
@@ -25,7 +26,8 @@ esptool.py --chip esp32s3 --port /dev/ttyACM0 \
   write_flash \
   0x0      bootloader-vX.Y.Z.bin \
   0x8000   partition-table-vX.Y.Z.bin \
-  0x10000  elrs_usb-vX.Y.Z.bin
+  0x9000   ota_data_initial-vX.Y.Z.bin \
+  0x20000  elrs_usb-vX.Y.Z.bin
 ```
 
 ### OTA update (WiFi)
