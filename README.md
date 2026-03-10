@@ -59,6 +59,27 @@ Any ESP32-S3 board with a USB-OTG port. The internal USB PHY is used (no externa
 - **OTA firmware updates** with dual partitions and automatic rollback
 - **WS2812 status LED** with configurable effects
 
+## Libraries
+
+This project relies on two ESP-IDF components:
+
+- **[esp-crsf-rx](https://github.com/manuel-alvarez-alvarez/esp-crsf-rx)** — CRSF protocol receiver for decoding ELRS channel data over UART
+- **[esp-hid-gamepad](https://github.com/manuel-alvarez-alvarez/esp-hid-gamepad)** — USB HID gamepad with runtime-configurable axes, buttons, and switches via TinyUSB
+
+## Performance
+
+Tested with [GamepadLA](https://gamepadla.com/soft.pdl) at 1000 Hz polling rate:
+
+| Metric | Value |
+|--------|-------|
+| Average polling rate | 1000.85 Hz |
+| Median polling rate | 999.00 Hz |
+| Min interval | 0.96 ms |
+| Median interval | 1.00 ms |
+| Average interval | 1.00 ms |
+| Max interval | 4.00 ms |
+| Jitter (StdDev) | 0.47 ms |
+
 ## Links
 
 - [Project page](https://manuel-alvarez-alvarez.github.io/elrs-usb/)
